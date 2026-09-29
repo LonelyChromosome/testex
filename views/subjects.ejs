@@ -1,0 +1,12 @@
+<!doctype html>
+<htlm lang="vi">
+<head><meta charset="utf-8"><title>Subjects</title></head>
+<body>
+  <h1>Danh sách môn học</h1>
+  <ul>
+    <% subjects.forEach(subject => { %>
+      <li><a href="/subjects/<%= subject.id %>"><%= subject.name %></a></li>
+    <% }) %>
+  </ul>
+</body>
+</html>
