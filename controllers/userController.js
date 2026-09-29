@@ -4,7 +4,7 @@ const users = [
 ];
 
 exports.index = (req, res) => {
-  res.render('user-list', { users });
+  res.render('users', { users });
 };
 
 exports.showAddForm = (req, res) => {
