@@ -7,7 +7,7 @@
 <body>
   <% if (student) { %>
     <h1>Sửa sinh viên</h1>
-    <form method="POST" action="/students/edit">
+    <form method="POST" action="/site/students/edit">
       <input type="hidden" name="id" value="<%= student.id %>">
       <input name="name" value="<%= student.name %>">
       <input name="email" value="<%= student.email %>">
