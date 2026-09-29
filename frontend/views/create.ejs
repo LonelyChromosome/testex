@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thêm bài viết</title>
+</head>
+<body>
+  <h1>Thêm bài viết</h1>
+
+  <form method="POST" action="/news/create">
+    <label>Tiêu đề</label>
+    <input type="text" name="title">
+
+    <label>Mô tả</label>
+    <textarea name="description"></textarea>
+
+    <button type="submit">Thêm</button>
+  </form>
+
+  <a href="/news">Quay lại</a>
+</body>
+</html>
