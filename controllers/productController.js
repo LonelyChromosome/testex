@@ -9,18 +9,18 @@ exports.showCreate = (req, res) => {
 };
 
 exports.create = (req, res) => {
-  model.create(req.body.title, Number(req.body.price));
+  model.update(req.body.title, Number(req.body.price));
   res.redirect('/products');
 };
 
 exports.showEdit = (req, res) => {
-  const product = model.getById(Number(req.params.productId));
+  const product = model.getById(Number(req.params.id));
   if (!product) return res.status(404).send('Not found');
   res.render('product-edit', { product });
 };
 
 exports.update = (req, res) => {
-  model.edit(
+  model.add(
     Number(req.params.id),
     req.body.name,
     Number(req.body.cost)
