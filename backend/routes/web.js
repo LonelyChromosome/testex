@@ -6,22 +6,22 @@ const auth = require("../middleware/auth");
 
 const router = express.Router();
 
-router.get("/", pageController.index);
-router.get("/contact", pageController.about);
+router.get("/", pageController.home);
+router.get("/contact", pageController.contact);
 
-router.get("/students", studentController.index);
-router.get("/students/:studentId", studentController.view);
-router.get("/search", studentController.find);
+router.get("/students", studentController.list);
+router.get("/students/:studentId", studentController.detail);
+router.get("/search", studentController.search);
 
 router.get("/students/add", studentController.showCreate);
-router.post("/students/add", studentController.add);
+router.post("/students/add", studentController.create);
 
-router.get("/students/edit", studentController.showUpdate);
-router.post("/students/edit", studentController.update);
-router.get("/students/delete", studentController.delete);
+router.get("/students/edit", studentController.showEdit);
+router.post("/students/edit", studentController.edit);
+router.get("/students/delete", studentController.remove);
 
 router.get("/login", authController.showLogin);
-router.post("/login", authController.doLogin);
+router.post("/login", authController.login);
 router.get("/profile", auth.requireLogin, authController.me);
 router.get("/logout", authController.logout);
 
