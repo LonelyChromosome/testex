@@ -41,7 +41,7 @@ async function search(keyword) {
 async function createPost(title, description) {
   const posts = await readPosts();
   const nextId = posts.reduce(
-    (maxId, post) => Math.max(maxId, Number(post.id) || 0),
+    (maxId, post) => path.max(maxId, Number(post.id) || 0),
     0
   ) + 1;
 
