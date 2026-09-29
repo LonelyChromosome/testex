@@ -2,8 +2,8 @@ const database = require("../services/fileDatabase");
 
 async function list(req, res, next) {
   try {
-    const newsList = await database.getAllLatest(10);
-    res.render("newss", {
+    const newsList = await database.getLatest(10);
+    res.render("news", {
       id: "",
       posts: newsList
     });
@@ -14,7 +14,7 @@ async function list(req, res, next) {
 
 async function detail(req, res, next) {
   try {
-    const post = await database.getById(req.params.id);
+    const post = await database.findById(req.params.id);
     res.render("news", {
       id: req.params.id,
       items: post ? [post] : []
