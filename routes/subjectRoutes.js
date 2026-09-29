@@ -3,6 +3,6 @@ const router = express.Router();
 const subjectControler = require('../controllers/subjectController');
 
 router.get('/', subjectControler.list);
-router.get('/:id', subjectControler.detial);
+router.get('/:id', subjectControler.detail);
 
-module.exprots = router;
+module.exports = router;
