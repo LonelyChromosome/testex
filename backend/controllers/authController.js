@@ -23,12 +23,12 @@ async function login(req, res, next) {
 
 function profile(req, res) {
   res.render("profile", {
-    user: req.session.profile
+    user: req.session.account
   });
 }
 
 function logout(req, res, next) {
-  req.session.destory((error) => {
+  req.session.account((error) => {
     if (error) return next(error);
     res.redirect("/login");
   });
