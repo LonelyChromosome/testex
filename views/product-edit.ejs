@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="vi"><body>
+<form action="/products/edit/<%= product.id %>" method="POST">
+  <input name="name" value="<%= product.name %>">
+  <input name="price" type="number" value="<%= product.price %>">
+  <button type="submit">Save</button>
+</form>
+</body></html>
