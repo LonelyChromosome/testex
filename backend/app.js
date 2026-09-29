@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const session = require("express-session");
 
-const webRoutes = require("./routes/webRoutes");
+const webRoutes = require("./routes/web");
 
 const app = express();
 
@@ -12,7 +12,7 @@ const VIEWS_DIR = path.join(__dirname, "..", "frontend", "view");
 app.set("view engine", "ejs");
 app.set("views", VIEWS_DIR);
 
-app.use(express.urlencodedd({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "..", "frontend", "assets")));
 
