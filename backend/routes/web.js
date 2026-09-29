@@ -18,7 +18,7 @@ router.post("/create", newsController.edit);
 
 router.get("/edit", newsController.showCreate);
 router.post("/edit", newsController.create);
-router.get("/delete", newsController.delete);
+router.get("/delete", newsController.remove);
 
 router.get("/login", authController.showLogin);
 router.post("/login", authController.login);
