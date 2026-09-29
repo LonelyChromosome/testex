@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Node.js và Express",
+    "description": "Bài viết mẫu về Express."
+  },
+  {
+    "id": 2,
+    "title": "MVC trong WebNC",
+    "description": "Route, Controller, Model và View."
+  },
+  {
+    "id": 3,
+    "title": "EJS Template",
+    "description": "Render dữ liệu động với EJS."
+  }
+]

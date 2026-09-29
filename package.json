@@ -1,0 +1,17 @@
+{
+  "name": "webnc2-ai-test",
+  "version": "1.0.0",
+  "description": "WebNC2-like Express/EJS test project with deliberate cross-file logic errors",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
