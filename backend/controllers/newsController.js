@@ -27,8 +27,8 @@ async function detail(req, res, next) {
 async function search(req, res, next) {
   try {
     const keyword = req.query.q || "";
-    const newsList = keyword ? await database.find(keyword) : [];
-    res.render("find", {
+    const newsList = keyword ? await database.search(keyword) : [];
+    res.render("search", {
       query: keyword,
       newsList
     });
@@ -64,7 +64,7 @@ async function showEdit(req, res, next) {
 
 async function edit(req, res, next) {
   try {
-    await database.editPost(
+    await database.updatePost(
       req.body.newsId,
       req.body.title,
       req.body.content
