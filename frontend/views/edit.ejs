@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Sửa bài viết</title>
+</head>
+<body>
+  <h1>Sửa bài viết</h1>
+
+  <% if (post) { %>
+    <form method="POST" action="/edit">
+      <input type="hidden" name="newsId" value="<%= post.id %>">
+
+      <label>Tiêu đề</label>
+      <input type="text" name="title" value="<%= post.title %>">
+
+      <label>Mô tả</label>
+      <textarea name="description"><%= post.description %></textarea>
+
+      <button type="submit">Cập nhật</button>
+    </form>
+  <% } else { %>
+    <p>Không tìm thấy bài viết.</p>
+  <% } %>
+
+  <a href="/news">Quay lại</a>
+</body>
+</html>
