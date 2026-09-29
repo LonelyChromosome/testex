@@ -22,3 +22,5 @@ Branch `main` chỉ là trang hướng dẫn.
 - `test-07-mvc-model`: sai chuỗi Route ↔ Controller ↔ Model ↔ View.
 - `test-08-session-db`: session key, form field và SQL placeholder.
 - `test-09-mixed-basic`: bài tổng hợp MVC cơ bản với nhiều mismatch cùng lúc.
+
+- `test-11-50-errors`: stress test khoảng 50 lỗi WebNC Lab 1–10, trộn Express/MVC/EJS/session/database và lỗi tham chiếu cross-file.
