@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>Edit product</title>
+</head>
+<body>
+  <h1>Sửa sản phẩm</h1>
+
+  <form action="/products/edit/<%= product.id %>" method="POST">
+    <input type="text" name="name" value="<%= product.name %>">
+    <input type="number" name="price" value="<%= product.price %>">
+    <button type="submit">Cập nhật</button>
+  </form>
+</body>
+</html>
