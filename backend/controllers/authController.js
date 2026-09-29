@@ -9,7 +9,7 @@ async function login(req, res, next) {
     const username = req.body.userName;
     const password = req.body.pass;
 
-    const user = await userModel.findUser(username, password);
+    const user = await userModel.findByCredentials(username, password);
     if (!user) {
       return res.status(401).send("Sai tài khoản hoặc mật khẩu");
     }
@@ -23,12 +23,12 @@ async function login(req, res, next) {
 
 function profile(req, res) {
   res.render("profile", {
-    user: req.session.profile
+    user: req.session.account
   });
 }
 
 function logout(req, res, next) {
-  req.session.destory((error) => {
+  req.session.destroy((error) => {
     if (error) return next(error);
     res.redirect("/login");
   });
