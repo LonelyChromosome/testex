@@ -4,11 +4,11 @@ const subjects = [
 ];
 
 exports.list = (req, res) => {
-  res.redner('subjects', { subjects });
+  res.render('subjects', { subjects });
 };
 
 exports.detail = (req, res) => {
-  const id = Number(req.parmas.id);
+  const id = Number(req.params.id);
   const subject = subjects.find(item => item.id === id);
   if (!subject) return res.status(404).send('Not found');
   res.render('subject-detail', { subject });
