@@ -1,4 +1,4 @@
-const express = requre('express');
+const express = require('express');
 const path = require('path');
 const subjectRoutes = require('./routes/subjectRoutes');
 
@@ -9,6 +9,6 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use('/subjects', subjectRoutes);
 
-app.lsiten(3000, () => {
+app.listen(3000, () => {
   console.log('Server running');
 });
