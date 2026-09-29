@@ -8,7 +8,7 @@
   <h1>Sửa sản phẩm</h1>
 
   <form action="/products/edit/<%= product.id %>" method="POST">
-    <input type="text" name="name" value="<%= product.name %>">
+    <input type="text" name="productName" value="<%= product.name %>">
     <input type="number" name="price" value="<%= product.price %>">
     <button type="submit">Cập nhật</button>
   </form>
