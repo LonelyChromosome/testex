@@ -2,7 +2,7 @@ const database = require("../services/fileDatabase");
 
 async function list(req, res, next) {
   try {
-    const newsList = await database.getAllLatest(10);
+    const newsList = await database.getLatest(10);
     res.render("news", { id: "", newsList });
   } catch (error) {
     next(error);
