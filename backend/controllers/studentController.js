@@ -3,7 +3,7 @@ const studentModel = require("../models/studentModel");
 async function list(req, res, next) {
   try {
     const students = await studentModel.getAllStudents();
-    res.render("student-list", { items: students });
+    res.render("students", { items: students });
   } catch (error) {
     next(error);
   }
@@ -11,8 +11,8 @@ async function list(req, res, next) {
 
 async function detail(req, res, next) {
   try {
-    const student = await studentModel.findStudentById(req.params.studentCode);
-    res.render("studentDetail", { item: student });
+    const student = await studentModel.findStudentById(req.params.studentId);
+    res.render("student-detail", { item: student });
   } catch (error) {
     next(error);
   }
@@ -22,7 +22,7 @@ async function search(req, res, next) {
   try {
     const keyword = req.query.q || "";
     const results = keyword ? await studentModel.searchByName(keyword) : [];
-    res.render("find", { keyword, results });
+    res.render("search", { keyword, results });
   } catch (error) {
     next(error);
   }
