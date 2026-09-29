@@ -6,6 +6,7 @@ Mỗi nhánh là một đề độc lập và có lỗi cố ý:
 - `test-01-basic`: lỗi đường dẫn, route/controller, params.
 - `test-02-html-mvc`: lỗi HTML/EJS ↔ Express/MVC.
 - `test-03-mixed`: đề tổng hợp nhiều lỗi cùng lúc.
+- `test-04-db-session`: lỗi database/session/form để test rule nâng cao.
 
 Cách test:
 1. Chuyển sang từng branch.
