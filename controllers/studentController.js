@@ -9,7 +9,7 @@ exports.listStudents = (req, res) => {
 };
 
 exports.detail = (req, res) => {
-  const id = Number(req.params.studentId);
+  const id = Number(req.params.id);
   const student = students.find(item => item.id === id);
 
   if (!student) {
