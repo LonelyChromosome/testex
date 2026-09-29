@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Sửa sinh viên</title>
+</head>
+<body>
+  <% if (student) { %>
+    <h1>Sửa sinh viên</h1>
+    <form method="POST" action="/students/edit">
+      <input type="hidden" name="id" value="<%= student.id %>">
+      <input name="name" value="<%= student.name %>">
+      <input name="email" value="<%= student.email %>">
+      <button type="submit">Cập nhật</button>
+    </form>
+  <% } else { %>
+    <h1>Không tìm thấy sinh viên</h1>
+  <% } %>
+  <a href="/students">Quay lại</a>
+</body>
+</html>

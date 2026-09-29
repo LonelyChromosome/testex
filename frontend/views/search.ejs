@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tìm kiếm</title>
+</head>
+<body>
+  <h1>Tìm kiếm sinh viên</h1>
+  <form method="GET" action="/search">
+    <input
+      name="keyword"
+      value="<%= keyword || '' %>"
+      placeholder="Nhập tên"
+    >
+    <button type="submit">Tìm</button>
+  </form>
+  <ul>
+    <% students.forEach((student) => { %>
+      <li><%= student.name %> - <%= student.email %></li>
+    <% }) %>
+  </ul>
+  <a href="/students">Danh sách</a>
+</body>
+</html>

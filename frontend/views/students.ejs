@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Sinh viên</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Danh sách sinh viên</h1>
+  <a href="/students/add">Thêm sinh viên</a>
+  <ul>
+    <% students.forEach((student) => { %>
+      <li>
+        <a href="/students/<%= student.id %>"><%= student.name %></a>
+        - <%= student.email %>
+        | <a href="/students/edit?id=<%= student.id %>">Sửa</a>
+        | <a href="/students/delete?id=<%= student.id %>">Xóa</a>
+      </li>
+    <% }) %>
+  </ul>
+  <a href="/">Trang chủ</a>
+</body>
+</html>
