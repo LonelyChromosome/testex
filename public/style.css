@@ -1,0 +1,9 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 720px;
+  margin: 40px auto;
+}
+
+h1 {
+  margin-bottom: 16px;
+}
