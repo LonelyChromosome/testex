@@ -1,8 +1,8 @@
 const productModel = require('../models/productModel');
 
 exports.index = (req, res) => {
-  const products = productModel.getAllProducts();
-  res.render('product-list', { products });
+  const products = productModel.getAll();
+  res.render('products', { products });
 };
 
 exports.showAddForm = (req, res) => {
@@ -18,7 +18,7 @@ exports.create = (req, res) => {
 };
 
 exports.editForm = (req, res) => {
-  const id = Number(req.params.productId);
+  const id = Number(req.params.id);
   const product = productModel.getById(id);
 
   if (!product) {
@@ -33,6 +33,6 @@ exports.updateProduct = (req, res) => {
   const name = req.body.productName;
   const price = Number(req.body.price);
 
-  productModel.updateProduct(id, name, price);
+  productModel.update(id, name, price);
   res.redirect('/products');
 };
