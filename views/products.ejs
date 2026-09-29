@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>Products</title>
+</head>
+<body>
+  <h1>Danh sách sản phẩm</h1>
+  <a href="/products/add">Thêm sản phẩm</a>
+
+  <ul>
+    <% products.forEach(product => { %>
+      <li>
+        <%= product.name %> - <%= product.price %>
+        <a href="/products/edit/<%= product.id %>">Sửa</a>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
