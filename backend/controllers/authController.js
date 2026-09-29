@@ -9,7 +9,7 @@ async function login(req, res, next) {
     const username = req.body.userName;
     const password = req.body.pass;
 
-    const user = await userDatabase.findUser(username, password);
+    const user = await userDatabase.findByCredentials(username, password);
     if (!user) {
       return res.status(401).send("Sai tài khoản hoặc mật khẩu");
     }
