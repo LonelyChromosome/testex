@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Node.js cơ bản",
+    "description": "Tạo web server và xử lý request response."
+  },
+  {
+    "id": 2,
+    "title": "Express routing",
+    "description": "Tổ chức route bằng Express."
+  },
+  {
+    "id": 3,
+    "title": "MVC trong WebNC",
+    "description": "Tách route controller model và view."
+  }
+]
