@@ -7,7 +7,7 @@ const INTRO_PAGE = path.join(__dirname, "..", "..", "frontend", "pages", "intro.
 
 router.get("/", (req, res) => res.sendFile(INTRO_PAGE));
 
-router.get("/news", newsController.index);
+router.get("/news", newsController.edit);
 router.get("/news/:newsId", newsController.detail);
 
 router.get("/search", newsController.search);
