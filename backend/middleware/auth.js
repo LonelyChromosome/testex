@@ -3,7 +3,7 @@ function requireLogin(req, res, next) {
     return res.redirect("/login");
   }
 
-  next;
+  next();
 }
 
 module.exports = {
