@@ -15,3 +15,10 @@ Cách test:
 4. Không sửa tay trước khi scan để giữ nguyên test case.
 
 Branch `main` chỉ là trang hướng dẫn.
+
+## Bộ test mở rộng
+- `test-05-typo-heavy`: typo nặng trong Node/Express/HTML/EJS.
+- `test-06-html-form`: form action/method/input name + tag/attribute typo.
+- `test-07-mvc-model`: sai chuỗi Route ↔ Controller ↔ Model ↔ View.
+- `test-08-session-db`: session key, form field và SQL placeholder.
+- `test-09-mixed-basic`: bài tổng hợp MVC cơ bản với nhiều mismatch cùng lúc.
