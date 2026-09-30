@@ -1,0 +1,9 @@
+const app = require("./app");
+
+const PORT = process.env.PORT || 3000;
+const HOST = "0.0.0.0";
+
+app.listen(PORT, HOST, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
+  console.log("Database file: backend/data/db.json");
+});

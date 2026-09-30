@@ -1,0 +1,27 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Dao",
+      "email": "dao@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Duong",
+      "email": "duong@example.com"
+    },
+    {
+      "id": 3,
+      "name": "Khanh",
+      "email": "khanh@example.com"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "demo123",
+      "name": "Admin"
+    }
+  ]
+}

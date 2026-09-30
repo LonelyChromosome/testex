@@ -1,0 +1,19 @@
+{
+  "name": "webnc-10-errors-mixed",
+  "version": "1.0.0",
+  "description": "WebNC Lab 1-10 mixed debugging test",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1"
+  },
+  "license": "ISC"
+}

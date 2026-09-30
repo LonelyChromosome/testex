@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết sinh viên</title>
+</head>
+<body>
+  <% if (student) { %>
+    <h1><%= student.name %></h1>
+    <p><%= student.email %></p>
+  <% } else { %>
+    <h1>Không tìm thấy sinh viên</h1>
+  <% } %>
+
+  <a href="/students">Quay lại</a>
+</body>
+</html>
