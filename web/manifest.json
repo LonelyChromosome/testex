@@ -1,0 +1,9 @@
+{
+  "name": "Flutter Mobile Midterm Exam",
+  "short_name": "Mobile Exam",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F9FBE7",
+  "theme_color": "#8BC34A",
+  "description": "Three-page Flutter exam with BottomNavigationBar"
+}
