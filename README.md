@@ -1,26 +1,43 @@
-# WebNC Fixer Test Repo
+# Flutter Mobile Midterm Exam
 
-Repo này dùng để test Chrome extension **WebNC Fixer** cho phạm vi WebNC Lab 1–10.
+Bài thực hành theo đúng đề giữa kỳ Lập trình cho thiết bị di động (Flutter).
 
-Mỗi nhánh là một đề độc lập và có lỗi cố ý:
-- `test-01-basic`: lỗi đường dẫn, route/controller, params.
-- `test-02-html-mvc`: lỗi HTML/EJS ↔ Express/MVC.
-- `test-03-mixed`: đề tổng hợp nhiều lỗi cùng lúc.
-- `test-04-db-session`: lỗi database/session/form để test rule nâng cao.
+## Đã làm
 
-Cách test:
-1. Chuyển sang từng branch.
-2. Mở extension và Scan repository.
-3. Ghi lại lỗi extension phát hiện, lỗi nó tự fix, và lỗi nó bỏ sót.
-4. Không sửa tay trước khi scan để giữ nguyên test case.
+- 3 trang: `lib/Home.dart`, `lib/About.dart`, `lib/Detail.dart`
+- Home: `Welcome my home page`, chữ 25, dark green
+- About: `Introduction about the app`, chữ 25, dark green
+- Detail: `Main content`, chữ 25, green
+- Màu chính: `Colors.lightGreen`
+- Bottom Navigation Bar với 3 biểu tượng: Home / About / Detail; bấm để chuyển nội dung
+- `lib/main.dart` khởi động app và điều hướng
 
-Branch `main` chỉ là trang hướng dẫn.
+## Cách chạy
 
-## Bộ test mở rộng
-- `test-05-typo-heavy`: typo nặng trong Node/Express/HTML/EJS.
-- `test-06-html-form`: form action/method/input name + tag/attribute typo.
-- `test-07-mvc-model`: sai chuỗi Route ↔ Controller ↔ Model ↔ View.
-- `test-08-session-db`: session key, form field và SQL placeholder.
-- `test-09-mixed-basic`: bài tổng hợp MVC cơ bản với nhiều mismatch cùng lúc.
+Mở Terminal tại thư mục gốc repo (đã cài Flutter SDK).
 
-- `test-11-50-errors`: stress test khoảng 50 lỗi WebNC Lab 1–10, trộn Express/MVC/EJS/session/database và lỗi tham chiếu cross-file.
+**Lần đầu**, sinh mã nền tảng Android / Web bằng Flutter CLI (source Dart đã có sẵn, không cần chép lại):
+
+```bash
+flutter create --project-name mobile_exam --platforms=android,web .
+flutter pub get
+```
+
+Sau đó chạy một trong các lệnh:
+
+```bash
+flutter run                     # Thiết bị được chọn (Android)
+flutter run -d chrome           # Chrome nếu có thiết bị Chrome
+flutter run -d web-server --web-hostname 0.0.0.0 --web-port 3000  # GitHub Codespaces
+```
+
+Với Codespaces, mở cổng 3000 trong tab **Ports** để xem ứng dụng.
+
+## Kiểm tra
+
+```bash
+flutter analyze
+flutter test
+```
+
+Lưu ý: Repo lưu phần code Flutter của bài thi; `flutter create` ở bước đầu là cần thiết để sinh thư mục `android/` và `web/` theo phiên bản Flutter SDK đang dùng. Các nhánh WebNC của `testex` không bị thay đổi.
