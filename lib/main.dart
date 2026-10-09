@@ -1,11 +1,9 @@
-import "package:flutter/material.dart";
-import "Home.dart";
-import "About.dart";
-import "Detail.dart";
+import 'package:flutter/material.dart';
+import 'Home.dart';
+import 'About.dart';
+import 'Detail.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -15,50 +13,28 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int index = 0;
-
-  final List<Widget> pages = const [
-    Home(),
-    About(),
-    Detail(),
-  ];
+  int currentIndex = 0;
+  final pages = const [Home(), About(), Detail()];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Student Planner',
       theme: ThemeData(
-        primarySwatch: Colors.lightGreen,
-        scaffoldBackgroundColor: Colors.lightGreen.shade50,
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF347D55)),
+        scaffoldBackgroundColor: const Color(0xFFF4F8F4),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Flutter Mobile App"),
-          backgroundColor: Colors.lightGreen,
-        ),
-        body: pages[index],
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: index,
-          selectedItemColor: Colors.green.shade900,
-          unselectedItemColor: Colors.grey,
-          onTap: (value) {
-            setState(() {
-              index = value;
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.info),
-              label: "About",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.description),
-              label: "Detail",
-            ),
+        body: SafeArea(child: IndexedStack(index: currentIndex, children: pages)),
+        bottomNavigationBar: NavigationBar(
+          selectedIndex: currentIndex,
+          onDestinationSelected: (value) => setState(() => currentIndex = value),
+          destinations: const [
+            NavigationDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home), label: 'Trang chủ'),
+            NavigationDestination(icon: Icon(Icons.info_outline), selectedIcon: Icon(Icons.info), label: 'Giới thiệu'),
+            NavigationDestination(icon: Icon(Icons.list_alt_outlined), selectedIcon: Icon(Icons.list_alt), label: 'Chi tiết'),
           ],
         ),
       ),
