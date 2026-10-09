@@ -1,47 +1,22 @@
-# Flutter Mobile Midterm Exam
+# Strawberry Pavlova — Flutter Row / Column
 
-Bài thực hành đúng đề kiểm tra giữa kỳ môn Lập trình cho thiết bị di động.
+Giao diện Flutter/Dart tái hiện bố cục trong ảnh bài học: cột mô tả bên trái, ảnh bánh bên phải, 5 sao + **170 Reviews**, thông tin **PREP / COOK / FEEDS**. Màn hình nhỏ tự xếp ảnh lên trên để không tràn giao diện.
 
-- `lib/Home.dart`: Welcome my home page, size 25, dark green
-- `lib/About.dart`: Introduction about the app, size 25, dark green
-- `lib/Detail.dart`: Main content, size 25, green
-- `lib/main.dart`: màu chủ đạo Light Green, BottomNavigationBar 3 icon điều hướng Home / About / Detail
-- `web/index.html` + `web/manifest.json`: bộ khởi động Flutter Web
+- Nhánh riêng: `flutter-pavlova-layout`
+- Code giao diện: `lib/Pavlova.dart`
+- Điểm chạy: `lib/main.dart` (cố ý giữ ngắn)
+- Flutter dùng `Row`, `Column`, `Expanded`, `Wrap`, `Card`.
+- Ảnh mẫu gốc lấy từ repository `flutter/website` qua `Image.network`: cần internet để hiện ảnh.
+- Các file Home/About/Detail từ bài trước được giữ nguyên nhưng không sử dụng trên nhánh này.
 
-## Chạy trong GitHub Codespaces
-
-Mở Codespace tại **repo testex, branch flutter-midterm-exam**, không chạy nhầm project `he` cũ.
-
-Trong Terminal ở thư mục gốc repo:
+## Chạy Flutter Web trong Codespaces
 
 ```bash
+flutter pub get
 bash run-web.sh
 ```
 
-Mặc định Flutter chạy cổng **3001**, tách khỏi cổng 3000 có thể đang phục vụ ứng dụng khác.
-Vào tab **Ports** -> port **3001** -> **Open in Browser**.
-Giữ Terminal còn chạy. Sửa code có thể nhấn `r` (hot reload).
-
-Cách chạy tương đương:
-
-```bash
-flutter pub get
-flutter run -d web-server --web-hostname 0.0.0.0 --web-port 3001
-```
-
-Nếu trang vẫn trắng, vào **F12 -> Console** trên trang port 3001 để kiểm tra lỗi JS/Flutter và gửi cả kết quả Terminal. Cần xác nhận URL có `-3001.app.github.dev`, không phải `-3000.app.github.dev` của ứng dụng cũ.
-
-## Chạy như ứng dụng Android mobile
-
-Repo giữ code đề thi gọn, phần Android platform sẽ được Flutter CLI sinh bằng SDK hiện hành. Chạy một lần ở thư mục gốc:
-
-```bash
-flutter create --project-name mobile_exam --platforms=android .
-flutter pub get
-flutter run
-```
-
-Chọn Android emulator hoặc điện thoại Android kết nối máy chạy Flutter. Android Emulator không chạy trực tiếp bên trong Codespaces nếu môi trường đó không có emulator.
+Mở **Ports → 3001 → Open in Browser**. Nhớ chọn đúng branch `flutter-pavlova-layout`.
 
 ## Kiểm tra
 
@@ -51,4 +26,5 @@ flutter test
 flutter build web --release
 ```
 
-Chú ý: `web/index.html` chỉ là bootstrap; UI thực tế vẫn do Flutter render từ `lib/main.dart`. Các nhánh WebNC của repo không bị thay đổi.
+Nguồn ví dụ: https://docs.flutter.dev/ui/layout
+Ảnh nguồn: https://github.com/flutter/website/blob/main/examples/layout/pavlova/images/pavlova.jpg
