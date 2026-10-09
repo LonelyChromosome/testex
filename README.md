@@ -1,54 +1,36 @@
-# Flutter Mobile Midterm Exam
+# Bài tập Flutter — Bottom Navigation Bar và Screen
 
-Bài thực hành đúng đề kiểm tra giữa kỳ môn Lập trình cho thiết bị di động.
+**Project:** Student Planner (ứng dụng lịch học mẫu). Dựa trên nhánh `flutter-midterm-exam`, triển khai độc lập trên nhánh này, không ảnh hưởng các nhánh WebNC.
 
-- `lib/Home.dart`: Welcome my home page, size 25, dark green
-- `lib/About.dart`: Introduction about the app, size 25, dark green
-- `lib/Detail.dart`: Main content, size 25, green
-- `lib/main.dart`: màu chủ đạo Light Green, BottomNavigationBar 3 icon điều hướng Home / About / Detail
-- `web/index.html` + `web/manifest.json`: bộ khởi động Flutter Web
+## 1. Link README và wireframes
 
-## Chạy trong GitHub Codespaces
+![Wireframes 3 màn hình](docs/wireframes.svg)
 
-Mở Codespace tại **repo testex, branch flutter-midterm-exam**, không chạy nhầm project `he` cũ.
+Ảnh thiết kế: [docs/wireframes.svg](docs/wireframes.svg).
 
-Trong Terminal ở thư mục gốc repo:
+## 2. Code Bottom Navigation Bar
 
-```bash
-bash run-web.sh
-```
+[lib/main.dart](lib/main.dart): `NavigationBar` có 3 mục Trang chủ / Giới thiệu / Chi tiết. Chạm vào mục sẽ chuyển trang bằng `setState` và `IndexedStack` giữ trạng thái các trang.
 
-Mặc định Flutter chạy cổng **3001**, tách khỏi cổng 3000 có thể đang phục vụ ứng dụng khác.
-Vào tab **Ports** -> port **3001** -> **Open in Browser**.
-Giữ Terminal còn chạy. Sửa code có thể nhấn `r` (hot reload).
+## 3. Ảnh chụp Bottom Navigation Bar
 
-Cách chạy tương đương:
+**Chưa có ảnh chụp thực tế.** Chạy app trên trình duyệt hoặc điện thoại rồi chụp toàn màn hình có thanh điều hướng bên dưới; lưu vào `docs/screenshots/navigation.png`.
+
+## 4. Code Screen được phụ trách
+
+[lib/Home.dart](lib/Home.dart): màn hình Trang chủ hiển thị thời khóa biểu minh họa. Sử dụng `StatelessWidget` cho `Home` và từng ô môn học.
+
+## 5. Ảnh chụp Screen đã chạy
+
+**Chưa có ảnh chụp thực tế.** Ở tab Trang chủ, chụp màn hình ứng dụng sau khi chạy; lưu vào `docs/screenshots/home.png`.
+
+## Chạy thử
 
 ```bash
 flutter pub get
-flutter run -d web-server --web-hostname 0.0.0.0 --web-port 3001
+flutter run -d chrome
 ```
 
-Nếu trang vẫn trắng, vào **F12 -> Console** trên trang port 3001 để kiểm tra lỗi JS/Flutter và gửi cả kết quả Terminal. Cần xác nhận URL có `-3001.app.github.dev`, không phải `-3000.app.github.dev` của ứng dụng cũ.
+Hoặc dùng `bash run-web.sh` trong Codespaces và mở port 3001.
 
-## Chạy như ứng dụng Android mobile
-
-Repo giữ code đề thi gọn, phần Android platform sẽ được Flutter CLI sinh bằng SDK hiện hành. Chạy một lần ở thư mục gốc:
-
-```bash
-flutter create --project-name mobile_exam --platforms=android .
-flutter pub get
-flutter run
-```
-
-Chọn Android emulator hoặc điện thoại Android kết nối máy chạy Flutter. Android Emulator không chạy trực tiếp bên trong Codespaces nếu môi trường đó không có emulator.
-
-## Kiểm tra
-
-```bash
-flutter analyze
-flutter test
-flutter build web --release
-```
-
-Chú ý: `web/index.html` chỉ là bootstrap; UI thực tế vẫn do Flutter render từ `lib/main.dart`. Các nhánh WebNC của repo không bị thay đổi.
+> Dữ liệu 3 môn học là dữ liệu minh họa, không kết nối QLĐT. Wireframe là thiết kế chứ **không phải** ảnh chụp ứng dụng đã chạy.
